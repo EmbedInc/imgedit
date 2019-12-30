@@ -12,4 +12,4 @@ set debugging=true
 call build_progs
 if errorlevel 1 goto :eof
 call extpath_var msvc/debugger.exe tnam
-"%tnam%" /DebugExe %prog%.exe %2 %3 %4 %5 %6 %7 %8 %9
+"%tnam%" /DebugExe %prog%.exe -dev debug %2 %3 %4 %5 %6 %7 %8 %9

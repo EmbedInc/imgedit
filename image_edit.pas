@@ -196,17 +196,12 @@ opened:
 
   rend_set.update_mode^ (rend_updmode_buffall_k); {buffer SW updates for speed sake}
 
+  gui_events_init_key;                 {enable keys required by GUI library}
   rend_set.event_req_close^ (true);    {enable CLOSE, CLOSE_USER}
   rend_set.event_req_wiped_resize^ (true); {redraw due to size change}
   rend_set.event_req_wiped_rect^ (true); {redraw due to got corrupted}
   rend_set.event_req_pnt^ (true);      {request pointer motion events}
-  gui_events_init_key;                 {enable keys required by GUI library}
 
-  rend_set.enter_level^ (0);           {make sure we are out of graphics mode}
-
-  iedit_win_img_init;                  {one-time initialization}
-
-  gui_events_init_key;                 {set up RENDlib key events}
   rend_get.keys^ (keys_p, nk);         {get key descriptors array info}
   for ii := 1 to nk do begin           {once for each key}
     with keys_p^[ii]:key do begin
@@ -216,6 +211,8 @@ opened:
     end;                               {done with KEY abbreviation}
     end;                               {back to examine next key descriptor}
 
+  rend_set.enter_level^ (0);           {make sure we are out of graphics mode}
+  iedit_win_img_init;                  {one-time initialization}
   iedit_resize;                        {make initial set of windows}
   gui_win_draw_all (win_root);         {draw initial blank state}
 {
