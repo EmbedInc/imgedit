@@ -43,6 +43,7 @@ label
 *   XOR mode is in effect, so drawing the line a second time will erase it.
 }
 procedure line;
+  val_param; internal;
 
 begin
   rend_set.cpnt_2dim^ (sx + 0.5, sy + 0.5);
@@ -57,6 +58,7 @@ begin
 }
 procedure newline (
   in      x, y: sys_int_machine_t);
+  val_param;
 
 begin
   line;                                {erase old line by drawing again in XOR mode}
@@ -72,6 +74,7 @@ begin
 *   Erase the drag line and restore the drawing state.
 }
 procedure undrag;
+  val_param; internal;
 
 begin
   line;                                {erase old line by drawing again in XOR mode}
@@ -172,6 +175,7 @@ function iedit_drag_box (              {perform a pointer box drag operation}
   val_param;
 
 var
+  stx, sty: sys_int_machine_t;         {saved copy of STARTX,STARTY}
   xl, xr: sys_int_machine_t;           {left and right X of box interior}
   yt, yb: sys_int_machine_t;           {top and bottom Y of box interior}
   xliml, xlimr, ylimt, ylimb:          {allowed rectangle limits, RENDlib coor}
@@ -191,6 +195,7 @@ label
 *   a second time will erase it.
 }
 procedure draw;
+  val_param; internal;
 
 begin
   rend_set.cpnt_2dimi^ (xl, yt);
@@ -214,12 +219,13 @@ begin
 }
 procedure newcoor (
   in      x, y: sys_int_machine_t);
+  val_param; internal;
 
 begin
-  xl := max(xliml, min(xlimr, startx, x)); {compute new box coordinates}
-  xr := min(xlimr, max(xliml, startx, x));
-  yt := max(ylimt, min(ylimb, starty, y));
-  yb := min(ylimb, max(ylimt, starty, y));
+  xl := max(xliml, min(xlimr, stx, x)); {compute new box coordinates}
+  xr := min(xlimr, max(xliml, stx, x));
+  yt := max(ylimt, min(ylimb, sty, y));
+  yb := min(ylimb, max(ylimt, sty, y));
   end;
 {
 ********************
@@ -230,6 +236,7 @@ begin
 }
 procedure newdraw (
   in      x, y: sys_int_machine_t);
+  val_param; internal;
 
 begin
   draw;                                {redraw old display to erase it}
@@ -244,6 +251,7 @@ begin
 *   Erase the display and restore the drawing state.
 }
 procedure undrag;
+  val_param; internal;
 
 begin
   draw;                                {redraw old display to erase it}
@@ -257,6 +265,9 @@ begin
 *   Start of main routine.
 }
 begin
+  stx := startx;                       {make local copy of start coordinate}
+  sty := starty;
+
   xliml := win.pos.x;                  {make rectangle interior limits}
   xlimr := win.pos.x + win.rect.dx - 1;
   ylimt := win.pos.y;
@@ -294,6 +305,11 @@ rend_ev_key_k: begin                   {a key was pressed or released}
       rect.y := win.rect.dy - yb + win.pos.y - 1;
       rect.dy := yb - yt + 1;
       iedit_drag_box := true;          {indicate drag confirmed}
+
+(*
+      writeln ('Box point ', rect.x, ',', rect.y, ' size ', rect.dx, ',', rect.dy);
+*)
+
       return;
       end;
 {
@@ -325,4 +341,9 @@ cancel:
   undrag;                              {exit drag mode}
   rend_event_push (ev);                {push unexpected event back onto the queue}
   iedit_drag_box := false;             {indicate the drag operation was canceled}
+
+(*
+  rend_event_show (ev);
+*)
+
   end;
