@@ -1,6 +1,6 @@
 module iedit_win_root;
 define iedit_win_root_init;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

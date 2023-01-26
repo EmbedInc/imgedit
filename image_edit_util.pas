@@ -1,7 +1,7 @@
 module iedit_util;
 define iedit_menu_add_msg;
 define xf2d_inv;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

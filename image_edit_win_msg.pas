@@ -3,7 +3,7 @@ define iedit_win_msg_init;
 define iedit_msg_vstr;
 define iedit_msg_message;
 define iedit_win_msg;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 
 var
   win: gui_win_t;                      {window handled by this module}

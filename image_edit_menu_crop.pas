@@ -1,6 +1,6 @@
 module iedit_menu_crop;
 define iedit_menu_crop;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

@@ -1,6 +1,6 @@
 module iedit_menu_disp;
 define iedit_menu_disp;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

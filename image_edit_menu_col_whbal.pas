@@ -1,7 +1,7 @@
 module iedit_menu_col_whbal;
 define iedit_whitebal;
 define iedit_menu_col_whbal;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

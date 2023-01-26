@@ -1,6 +1,6 @@
 module iedit_open;
 define iedit_open;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

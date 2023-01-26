@@ -5,7 +5,7 @@ module iedit_color;
 define iedit_color_init;
 define iedit_color_inv;
 define iedit_color_upd;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 
 var
   cvalid: boolean;                     {all cached color information is valid}

@@ -1,7 +1,7 @@
 module iedit_win_op;
 define iedit_win_op_create;
 define iedit_win_op_update;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

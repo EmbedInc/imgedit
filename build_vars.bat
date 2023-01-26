@@ -5,8 +5,5 @@ rem
 set srcdir=imgedit
 set buildname=
 call treename_var "(cog)source/imgedit" sourcedir
-set libname=iedit
+set libname=
 set fwname=
-call treename_var "(cog)src/%srcdir%/debug_%fwname%.bat" tnam
-make_debug "%tnam%"
-call "%tnam%"

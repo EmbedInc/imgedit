@@ -4,7 +4,7 @@ module iedit_out;
 define iedit_out_geo;
 define iedit_out_op;
 define iedit_out_write;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

@@ -4,7 +4,7 @@ define iedit_win_img_init;
 define iedit_win_img;
 define iedit_win_img_update;
 define iedit_win_img_ncache;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 
 const
   backg_red = 0.20;                    {default background color, 0-1 scale}

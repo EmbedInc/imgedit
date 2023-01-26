@@ -1,6 +1,6 @@
 module iedit_win_menu;
 define iedit_win_menu_init;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 
 type
   id_k_t = sys_int_machine_t (         {IDs for the menu entries}

@@ -5,5 +5,4 @@ rem
 setlocal
 call godir "(cog)source/imgedit"
 
-call build_lib
 call build_progs

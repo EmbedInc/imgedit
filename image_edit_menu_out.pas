@@ -1,6 +1,6 @@
 module iedit_menu_out;
 define iedit_menu_out;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

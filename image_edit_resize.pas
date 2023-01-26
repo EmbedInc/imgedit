@@ -1,6 +1,6 @@
 module iedit_resize;
 define iedit_resize;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

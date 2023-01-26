@@ -1,5 +1,5 @@
 program "gui" image_edit;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 define iedit;                          {define the common block private to this program}
 
 const

@@ -1,7 +1,7 @@
 module iedit_drag;
 define iedit_drag_line;
 define iedit_drag_box;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

@@ -3,7 +3,7 @@ define iedit_op_colors;
 define iedit_get_color;
 define iedit_white_update;
 define iedit_menu_colors;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *

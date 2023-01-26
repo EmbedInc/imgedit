@@ -9,7 +9,7 @@ define iedit_text_int_left;
 define iedit_text_fp;
 define iedit_text_fp_left;
 define iedit_text_color;
-%include 'iedit.ins.pas';
+%include 'image_edit.ins.pas';
 {
 ********************************************************************************
 *
